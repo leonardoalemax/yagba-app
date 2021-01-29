@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import styled from 'styled-components';
 import "antd/dist/antd.css";
-import Search from './pages/Search';
+import Search from '../pages/Search';
 
 const { Header, Content } = Layout;
 
