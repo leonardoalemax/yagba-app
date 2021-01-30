@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Layout, Menu, Space } from 'antd';
+import { Layout, Menu } from 'antd';
 import styled from 'styled-components';
 import "antd/dist/antd.css";
 import Discovery from '../pages/Discovery';
+import Auth from './Auth';
 
 const { Header, Content } = Layout;
 
@@ -29,10 +30,12 @@ const App = () => {
           <Menu.Item key="discovery">Discover</Menu.Item>
           <Menu.Item key="dashboard">Insights</Menu.Item>
           <Menu.Item key="backlog">Backlog</Menu.Item>
+         
         </Menu>
       </Header>
       <Content>
-        { view === 'discovery' && <Discovery /> }
+        { view === 'discovery' && <Discovery /> }  
+        <Auth />
       </Content>
     </LayoutStyled>
   );

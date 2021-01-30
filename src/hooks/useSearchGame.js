@@ -4,7 +4,7 @@ import Api from '../services/api'
 
 const useSearchGame = () => {
   const [result, setResult] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('Tomb Raider');
   useEffect(() => {
     async function request() {
       if (searchTerm === '') return

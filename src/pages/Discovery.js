@@ -1,4 +1,3 @@
-
 import { List, Modal } from 'antd';
 
 import { Layout, Content, Hero, Illustration, SearchInput } from '../styles/Discovery';
@@ -14,8 +13,8 @@ import { useState } from 'react';
 
 const Discovery = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const {setSearchTerm, result} = useSearchGame()
-  const {setId, detail, detailLoading} = useGameDetail()
+  const {setSearchTerm, result} = useSearchGame();
+  const {setId, detail, detailLoading} = useGameDetail();
 
   const onChange = (e) => {
     setSearchTerm(e)
