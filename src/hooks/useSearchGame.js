@@ -1,14 +1,22 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 
+import Api from '../services/api'
 
 const useSearchGame = () => {
   const [result, setResult] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   useEffect(() => {
     async function request() {
-      const { data } = await axios.get(`http://172.17.236.70:4200/igdb/search?term=${searchTerm}`)
-      setResult(data);
+      if (searchTerm === '') return
+
+      const fields = [
+        "name",
+        "cover.url",
+        "release_dates.*",
+        "platforms.name",
+      ]
+      
+      setResult(await Api.igdb(`fields ${fields.join(", ")}; search "${searchTerm}";`));
     }
     request()
   }, [searchTerm, setResult]);

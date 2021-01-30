@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Space } from 'antd';
 import styled from 'styled-components';
 import "antd/dist/antd.css";
-import Search from '../pages/Search';
+import Discovery from '../pages/Discovery';
 
 const { Header, Content } = Layout;
 
@@ -19,20 +19,20 @@ const Title = styled.h3`
 `;
 
 const App = () => {
-  const [view, setView] = useState('search');
+  const [view, setView] = useState('discovery');
 
   return (
     <LayoutStyled>
       <Header>
         <Title>Ya!GBA</Title>
-        <Menu theme="dark" mode="horizontal" onClick={(e) => {setView(e.key)}} defaultSelectedKeys={['search']}>
-          <Menu.Item key="search">Search</Menu.Item>
-          <Menu.Item key="dashboard">Dashboard</Menu.Item>
+        <Menu theme="dark" mode="horizontal" onClick={(e) => {setView(e.key)}} defaultSelectedKeys={['discovery']}>
+          <Menu.Item key="discovery">Discover</Menu.Item>
+          <Menu.Item key="dashboard">Insights</Menu.Item>
           <Menu.Item key="backlog">Backlog</Menu.Item>
         </Menu>
       </Header>
       <Content>
-        { view === 'search' && <Search /> }
+        { view === 'discovery' && <Discovery /> }
       </Content>
     </LayoutStyled>
   );
